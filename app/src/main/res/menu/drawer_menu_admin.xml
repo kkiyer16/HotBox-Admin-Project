@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view"
+      android:background="@color/white"
+>
+
+    <group android:checkableBehavior="single">
+
+        <item
+                android:id="@+id/home_admin"
+                android:title="Home"
+                android:icon="@drawable/ic_home_new"
+                />
+
+        <item
+                android:id="@+id/foodmenu_admin"
+                android:title="Menu"
+                android:icon="@drawable/ic_foodmenu"
+        />
+        <item
+                android:id="@+id/myorders_admin"
+                android:title="All Orders"
+                android:icon="@drawable/ic_myorder"
+        />
+        <item
+                android:id="@+id/offers_admin"
+                android:title="Offers"
+                android:icon="@drawable/ic_offers"
+                />
+        <item
+                android:id="@+id/account_admin"
+                android:title="Account"
+                android:icon="@drawable/ic_aboutus"
+                />
+
+    </group>
+
+</menu>

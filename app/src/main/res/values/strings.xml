@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">HotBox Admin</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="feedback">Feedback</string>
+    <string name="welcome_message">Welcome to HotBox!!!</string>
+    <string name="welcome_message_1">We will rescue you from the aggression of hunger</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_app_id">472768073253624</string>
+    <string name="fb_login_protocol_scheme">fb472768073253624</string>
+    <string name="shkey">com.example.menulayout</string>
+
+    <string-array name="food_categories">
+        <item>Select Food Category</item>
+        <item>Breakfast</item>
+        <item>Veg Lunch</item>
+        <item>NonVeg Lunch</item>
+        <item>Snacks</item>
+    </string-array>
+
+    <string-array name="subs_categories">
+        <item>Select Subscription</item>
+        <item>Only Today</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Quaterly</item>
+    </string-array>
+</resources>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".AdminEditProfileActivity"
+        >
+
+        <RelativeLayout
+                android:id="@+id/main_relative"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+            <LinearLayout
+                    android:padding="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/circular_admin_profile_image_ep"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/unisex_avatar"
+                        app:civ_border_color="@color/black"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="18dp"
+                        android:elevation="1dp"
+                        />
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#A3A3A3"
+                        android:layout_marginTop="30dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_update_name_admin_ep"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Update Name*"
+                            android:inputType="textPersonName"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:paddingLeft="20dp"
+                            android:textColor="@color/black"
+                            />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#A3A3A3"
+                        android:layout_marginTop="10dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/black"
+                        >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_update_username_admin_ep"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Update Username*"
+                            android:inputType="textPersonName"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:paddingLeft="20dp"
+                            android:textColor="@color/black"
+                            />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#A3A3A3"
+                        android:layout_marginTop="10dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_mob_no_admin_ep"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Mobile Number*"
+                            android:inputType="phone"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:paddingLeft="20dp"
+                            android:textColor="@color/black"
+                            />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ProgressBar
+                android:id="@+id/progress_bar_update_profile_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="435dp"
+                android:layout_marginLeft="180dp"
+                android:visibility="invisible"
+                />
+
+        <LinearLayout
+                android:id="@+id/layout_password_admin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:layout_marginTop="400dp"
+                android:padding="30dp"
+                android:visibility="invisible"
+                android:orientation="horizontal"
+                >
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:textColorHint="#A3A3A3"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_old_pwd_admin_ep"
+                        android:layout_width="255dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Old Password*"
+                        android:inputType="textPassword"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="20dp"
+                        android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                    android:id="@+id/iv_auth"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_tick"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginLeft="-45dp"
+                    android:layout_marginTop="15dp"
+                    />
+
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/intimation_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Click on tick button to authenticate password"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:fontFamily="serif-monospace"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                android:layout_below="@id/main_relative"
+                android:layout_marginTop="25dp"
+                />
+
+        <LinearLayout
+                android:id="@+id/layout_update_password_admin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:animateLayoutChanges="true"
+                android:visibility="visible"
+                android:layout_marginTop="400dp"
+                android:padding="30dp"
+                android:gravity="center_vertical"
+                >
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:textColorHint="#A3A3A3"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_new_pwd_admin_ep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="New Password*"
+                        android:inputType="textPassword"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="20dp"
+                        android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:textColorHint="#A3A3A3"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_cnfm_pwd_admin_ep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Confirm Password*"
+                        android:inputType="textPassword"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="20dp"
+                        android:textColor="@color/black"  />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <Button
+                    android:id="@+id/btn_update_profile_ep"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:text="Update Profile"
+                    android:background="@drawable/rounded_button"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textAllCaps="false"
+                    android:padding="10dp"
+                    android:layout_marginTop="600dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="30dp"
+                    />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

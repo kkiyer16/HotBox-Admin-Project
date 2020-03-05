@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF5722</color>
+    <color name="colorPrimaryDark">#AF3C18</color>
+    <color name="colorAccent">#FF710C</color>
+    <color name="white">#FFFFFF</color>
+    <color name="yellow">#F1FA03</color>
+    <color name="icons">#EE8F64</color>
+    <color name="light_white">#cdcdd1</color>
+    <color name="black">#000000</color>
+    <color name="flame_yellow">#FF710C</color>
+    <color name="hue">#e25822</color>
+    <color name="flame_orange">#ff4b05</color>
+    <color name="maroon">#9b0000</color>
+    <color name="flame_pink">#BF033B</color>
+    <color name="dark_blue">#27408B</color>
+    <color name="grey">#444242</color>
+    <color name="border_color">#AA333639</color>
+</resources>
