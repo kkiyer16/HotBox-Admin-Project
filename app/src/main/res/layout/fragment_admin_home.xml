@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    tools:context=".AdminHomeFragment">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/dotsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="220dp"
+        android:gravity="center"
+        android:orientation="horizontal" />
+
+    <include
+        android:id="@+id/include_lay_home"
+        layout="@layout/admin_home_frag_scroll_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AdminHomeFragment">
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Admin Home Page"
-            android:textSize="35sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"
-            />
+        android:layout_below="@+id/dotsLayout"
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>

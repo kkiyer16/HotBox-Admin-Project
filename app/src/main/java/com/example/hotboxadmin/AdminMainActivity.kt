@@ -70,10 +70,10 @@ class AdminMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
                 startActivity(Intent(this, AdminFoodMenuActivity::class.java))
             }
             R.id.offers_admin -> {
-                Toast.makeText(this, "Offers Clicked", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, AdminOffersActivity::class.java))
             }
             R.id.myorders_admin -> {
-                Toast.makeText(this, "My Orders Clicked", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, AdminAllOrdersActivity::class.java))
             }
             R.id.account_admin -> {
                 startActivity(Intent(this, AdminAccountActivity::class.java))

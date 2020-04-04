@@ -16,4 +16,5 @@
     <color name="dark_blue">#27408B</color>
     <color name="grey">#444242</color>
     <color name="border_color">#AA333639</color>
+    <color name="delete_red">#FF3C30</color>
 </resources>

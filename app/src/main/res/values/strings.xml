@@ -3,8 +3,8 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="feedback">Feedback</string>
-    <string name="welcome_message">Welcome to HotBox!!!</string>
-    <string name="welcome_message_1">We will rescue you from the aggression of hunger</string>
+    <string name="welcome_message">Welcome to HotBox Admin Page!!!</string>
+    <string name="welcome_message_1">Serving Food to satisfy the stomach and tongue of our customers</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -26,6 +26,14 @@
         <item>Only Today</item>
         <item>Weekly</item>
         <item>Monthly</item>
-        <item>Quaterly</item>
+        <item>Quarterly</item>
     </string-array>
+
+    <string-array name="status_categories">
+        <item>Select Status</item>
+        <item>Order Received</item>
+        <item>Left For Delivery</item>
+        <item>Order Delivered</item>
+    </string-array>
+
 </resources>

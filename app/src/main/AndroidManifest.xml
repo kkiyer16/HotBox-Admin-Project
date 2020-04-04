@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +17,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AdminCartListActivity"/>
+        <activity android:name=".AdminCateringOrdersActivity" />
+        <activity android:name=".AdminSmsActivity" />
+        <activity android:name=".AdminSendMessagesActivity" />
+        <activity android:name=".AdminOffersActivity" />
+        <activity android:name=".AdminHomeOrdersActivity" />
+        <activity android:name=".AdminAllOrdersActivity" />
         <activity android:name=".AdminFoodMenuActivity" />
         <activity android:name=".AdminAccountActivity" />
         <activity android:name=".AdminEditProfileActivity" />
@@ -22,8 +33,9 @@
         <activity
             android:name=".AdminLoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".SplashActivity"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
