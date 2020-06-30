@@ -11,24 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/send_sms_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/send_sms_recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp" />
-
-        </ScrollView>
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_send_final_message"
+            android:padding="10dp" />
 
         <Button
             android:id="@+id/btn_send_final_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/rounded_button"
             android:text="Send"
             android:textAllCaps="false"

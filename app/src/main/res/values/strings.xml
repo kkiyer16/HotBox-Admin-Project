@@ -16,8 +16,8 @@
     <string-array name="food_categories">
         <item>Select Food Category</item>
         <item>Breakfast</item>
-        <item>Veg Lunch</item>
-        <item>NonVeg Lunch</item>
+        <item>VegLunch</item>
+        <item>NonVegLunch</item>
         <item>Snacks</item>
     </string-array>
 

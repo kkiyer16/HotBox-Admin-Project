@@ -51,6 +51,7 @@ class AdminFoodMenuActivity : AppCompatActivity() {
     private val storagee = FirebaseStorage.getInstance()
     private val foodStorage : StorageReference = storagee.getReference("Menu Images")
     private var food = arrayOfNulls<String>(5)
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,8 +66,8 @@ class AdminFoodMenuActivity : AppCompatActivity() {
         food_categories_spinner = findViewById(R.id.spinner_food_category)
         food = resources.getStringArray(R.array.food_categories)
 
-        val arr_adap = ArrayAdapter(this, android.R.layout.simple_spinner_item, food)
-        arr_adap.setDropDownViewResource(android.R.layout.simple_spinner_item)
+        val arr_adap = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, food)
+        arr_adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         food_categories_spinner.adapter = arr_adap
 
         food_categories_spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -136,13 +137,15 @@ class AdminFoodMenuActivity : AppCompatActivity() {
                     adminData["fooddescription"] = fd_desc
                     adminData["imageuri"] = uri.toString()
                     val uuid = UUID.randomUUID().toString()
-                    val ref = fStore.collection("HotBox Admin")
-                        .document(FirebaseAuth.getInstance().currentUser?.uid!!)
+
+                    val ref = fStore.collection("HotBoxAdmin")
+                        .document(adminID)
                         .collection(fd_sp)
                         .document(uuid)
                     ref.set(adminData)
                         .addOnSuccessListener {
                             Toast.makeText(this,"Food Details Added Successfully", Toast.LENGTH_LONG).show()
+                            startActivity(Intent(this, AdminMainActivity::class.java))
                         }
                         .addOnFailureListener {
                             Toast.makeText(this, "Failed to Add" + it.message, Toast.LENGTH_LONG).show()

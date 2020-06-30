@@ -27,6 +27,7 @@ class AdminHomeOrdersActivity : AppCompatActivity(){
     lateinit var homeOrdersAdapter: HomeOrdersAdapter
     private val mArrayList: ArrayList<ModelHomeOrders> = ArrayList()
     lateinit var fStore: FirebaseFirestore
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +50,8 @@ class AdminHomeOrdersActivity : AppCompatActivity(){
                 if(data.exists()){
                     val array:ArrayList<String> = data.get("TotalList") as ArrayList<String>
                     for(ds in array){
-                        fStore.collection("Orders").document(ds).collection("HomeOrders").get().addOnSuccessListener{ snap->
+                        fStore.collection("Orders").document(ds).collection("HomeOrders").get()
+                            .addOnSuccessListener{ snap->
                             for (datasnap in snap) {
                                 try {
                                     val types: ModelHomeOrders = ModelHomeOrders(
@@ -60,7 +62,8 @@ class AdminHomeOrdersActivity : AppCompatActivity(){
                                         datasnap.getString("ordered_at")!!,
                                         datasnap.getString("pickupaddress")!!,
                                         datasnap.getString("subscription")!!,
-                                        datasnap.getString("uid")!!
+                                        datasnap.getString("uid")!!,
+                                        datasnap.getString("price")!!
                                     )
                                     mArrayList.add(types)
                                 } catch (e: Exception) {

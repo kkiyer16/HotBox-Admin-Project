@@ -21,6 +21,7 @@ class HomeOrdersAdapter(
     RecyclerView.Adapter<homeOrdersViewHolder>() {
     private var status = arrayOfNulls<String>(4)
     private val fStore = FirebaseFirestore.getInstance()
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): homeOrdersViewHolder {
         val layoutInflater: LayoutInflater = LayoutInflater.from(con)
@@ -48,6 +49,7 @@ class HomeOrdersAdapter(
             holder.ordered_at.text = homeOrderItem.ordered_at
             holder.pickup_add.text = homeOrderItem.pickupaddress
             holder.subs.text = homeOrderItem.subscription
+            holder.price.text = homeOrderItem.price
 
             status = con.resources.getStringArray(R.array.status_categories)
             val arr_adap = ArrayAdapter(con, android.R.layout.simple_spinner_dropdown_item, status)
@@ -135,4 +137,5 @@ class homeOrdersViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val spin_status = itemView.findViewById<Spinner>(R.id.spinner_status_category)
     val can_diag = itemView.findViewById<TextView>(R.id.home_orders_cancel_order_diagonal_tv)
     val dis_stat = itemView.findViewById<TextView>(R.id.order_tv_status_db)
+    val price = itemView.findViewById<TextView>(R.id.order_tv_price)
 }

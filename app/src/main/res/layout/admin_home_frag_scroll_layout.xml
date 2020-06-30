@@ -171,6 +171,42 @@
 
         </LinearLayout>
 
+        <RelativeLayout
+            android:id="@+id/lin_lay4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lin_lay3">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/remove_food_from_menu_card"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="Remove food from Menu"
+                    android:textColor="@color/white"
+                    android:fontFamily="serif-monospace"
+                    android:textStyle="bold"
+                    android:drawableRight="@drawable/ic_arrow"
+                    android:layout_gravity="center"
+                    android:drawableTint="@color/white"
+                    android:layout_margin="5dp"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
     </RelativeLayout>
 
 </ScrollView>

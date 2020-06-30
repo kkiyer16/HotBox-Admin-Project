@@ -53,6 +53,7 @@ class AdminEditProfileActivity : AppCompatActivity() {
     lateinit var ad_username : EditText
     lateinit var ad_mobno : EditText
     private val currentUser = FirebaseAuth.getInstance().currentUser
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -194,10 +195,10 @@ class AdminEditProfileActivity : AppCompatActivity() {
                 val userData = HashMap<String, Any>()
                 userData["Name"] = a_ne
                 userData["Username"] = a_une
-                userData["Mobile Number"] = a_mno
+                userData["MobileNumber"] = a_mno
 
-                val ref = fStore.collection("HotBox Admin").document("F0y2F2SeaoWHjY7sIHFr4JRf1HF2")
-                    .collection("Admin").document("Personal Details")
+                val ref = fStore.collection("HotBoxAdmin").document(adminID)
+                    .collection("Admin").document("PersonalDetails")
                 ref.set(userData, SetOptions.merge())
                     .addOnSuccessListener {
                         Toast.makeText(this, "Details Added Successfully", Toast.LENGTH_LONG).show()
@@ -246,8 +247,8 @@ class AdminEditProfileActivity : AppCompatActivity() {
             task.result.storage.downloadUrl.addOnSuccessListener { uri ->
                 val userData = HashMap<String, Any>()
                 userData["url"] = uri.toString()
-                val ref = fStore.collection("HotBox Admin").document("F0y2F2SeaoWHjY7sIHFr4JRf1HF2")
-                    .collection("Admin").document("Personal Details")
+                val ref = fStore.collection("HotBoxAdmin").document(adminID)
+                    .collection("Admin").document("PersonalDetails")
                 ref.update(userData)
                 progress_bar_update_profile_admin.visibility = View.VISIBLE
                 Toast.makeText(this, "Profile Image Uploaded Successfully to Database", Toast.LENGTH_LONG).show()

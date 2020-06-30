@@ -17,6 +17,7 @@ class AdminAccountActivity : AppCompatActivity() {
     lateinit var Admin_Username : TextView
     lateinit var Admin_Mobno : TextView
     lateinit var Admin_Email : TextView
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,12 +34,12 @@ class AdminAccountActivity : AppCompatActivity() {
         Admin_Email = findViewById(R.id.tv_email_admin)
         Admin_Mobno = findViewById(R.id.tv_mob_no_admin)
 
-        fStore.collection("HotBox Admin").document("F0y2F2SeaoWHjY7sIHFr4JRf1HF2")
-            .collection("Admin").document("Personal Details")
+        fStore.collection("HotBoxAdmin").document(adminID)
+            .collection("Admin").document("PersonalDetails")
             .get().addOnSuccessListener { ds->
                 val name_ad = ds.getString("Name")
                 val username_ad = ds.getString("Username")
-                val mob_ad = ds.getString("Mobile Number")
+                val mob_ad = ds.getString("MobileNumber")
                 val email_ad = ds.getString("Email")
                 val prof_ad = ds.getString("url").toString()
 

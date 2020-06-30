@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminCartListActivity"/>
+        <activity android:name=".AdminRemoveFoodActivity"></activity>
+        <activity android:name=".AdminCartListActivity" />
         <activity android:name=".AdminCateringOrdersActivity" />
         <activity android:name=".AdminSmsActivity" />
         <activity android:name=".AdminSendMessagesActivity" />

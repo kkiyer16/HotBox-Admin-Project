@@ -21,6 +21,7 @@ class AdminCateringOrdersActivity : AppCompatActivity() {
     lateinit var cateringOrdersAdapter: CateringOrdersAdapter
     private val mArrayList: ArrayList<ModelCateringOrder> = ArrayList()
     lateinit var fStore: FirebaseFirestore
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,29 +36,6 @@ class AdminCateringOrdersActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        //Add swipe
-//        val swipe = object : MySwipeHelper(this, recyclerView, 200) {
-//            override fun instantiateMyButton(
-//                viewHolder: RecyclerView.ViewHolder,
-//                buffer: MutableList<MyButton>
-//            ) {
-//                //Add button
-//                buffer.add(
-//                    MyButton(this@AdminCateringOrdersActivity,
-//                        "Delete",
-//                        30,
-//                        R.drawable.ic_delete,
-//                        Color.parseColor("#FF3C30"),
-//                        object : MyButtonClickListener {
-//                            override fun onClick(pos: Int) {
-//                                deleteOrder(pos)
-//                                Toast.makeText(this@AdminCateringOrdersActivity, "DELETE ID $pos", Toast.LENGTH_LONG).show()
-//                            }
-//                        }
-//                    )
-//                )
-//            }
-//        }
         cateringOrdersAdapter = CateringOrdersAdapter(applicationContext, mArrayList)
         recyclerView.adapter = cateringOrdersAdapter
 
@@ -177,10 +155,10 @@ class AdminCateringOrdersActivity : AppCompatActivity() {
         }
         
         try {
-            fStore.collection("HotBox Admin").document("Cart List").collection(uid).get()
+            fStore.collection("HotBoxAdmin").document("CartList").collection(uid).get()
                 .addOnSuccessListener { d->
                     for(a in d.documents) {
-                        fStore.collection("HotBox Admin").document("Cart List")
+                        fStore.collection("HotBoxAdmin").document("CartList")
                             .collection(uid).document(a.id.toString()).delete()
                             .addOnSuccessListener {
                                 Log.d("cart_delete", "Removed from cart too!!!")

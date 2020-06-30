@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_admin_send_messages.*
 class AdminSendMessagesActivity : AppCompatActivity() {
 
     private val reqcode = 123
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

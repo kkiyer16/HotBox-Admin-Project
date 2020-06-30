@@ -20,10 +20,10 @@ class AdminSmsActivity : AppCompatActivity() {
     private var action = ""
     lateinit var smsManager: SmsManager
     private val fStore = FirebaseFirestore.getInstance()
-    private val adminid = FirebaseAuth.getInstance().currentUser?.uid.toString()
     lateinit var userList :ArrayList<ModelSms>
     lateinit var sms_adap :SmsAdapter
     var isall_selected = 0
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +36,8 @@ class AdminSmsActivity : AppCompatActivity() {
         action =intent.extras!!.getString("action")!!
         smsManager = SmsManager.getDefault()
         userList = ArrayList()
+
+        send_sms_recycler_view.setHasFixedSize(true)
         sms_adap = SmsAdapter(applicationContext, userList)
         send_sms_recycler_view.layoutManager = LinearLayoutManager(applicationContext)
         send_sms_recycler_view.adapter = sms_adap
@@ -45,7 +47,9 @@ class AdminSmsActivity : AppCompatActivity() {
                 if(data.exists()){
                     val array : ArrayList<String> = data.get("TotalList") as ArrayList<String>
                     for (ds in array){
-                        fStore.collection("HotBox").document(ds).collection("Users").get()
+                        Log.d("ds", ds)
+                        fStore.collection("HotBox").document(ds).collection("Users")
+                            .get()
                             .addOnSuccessListener { snap->
                                 for (datasnap in snap){
                                     try {

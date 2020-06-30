@@ -24,6 +24,7 @@ class AdminMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     lateinit var adminHomeFragment: AdminHomeFragment
     lateinit var sh: SharedPreferences
     var mode = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_main)

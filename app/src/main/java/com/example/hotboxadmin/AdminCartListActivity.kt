@@ -16,6 +16,7 @@ class AdminCartListActivity : AppCompatActivity() {
     private val mArrayList: ArrayList<ModelDisplayCart> = ArrayList()
     lateinit var fStore: FirebaseFirestore
     private var uID = ""
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +35,7 @@ class AdminCartListActivity : AppCompatActivity() {
         recyclerView.adapter = displayCartAdapter
 
         uID = intent.getStringExtra("uid")
-        fStore.collection("HotBox Admin").document("Cart List").collection(uID)
+        fStore.collection("HotBoxAdmin").document("CartList").collection(uID)
             .addSnapshotListener { snap, e ->
                 if (snap!=null){
                     for (i in snap.documentChanges){

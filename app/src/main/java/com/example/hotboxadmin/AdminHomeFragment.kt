@@ -28,6 +28,7 @@ class AdminHomeFragment : Fragment() {
     lateinit var timer : Timer
     private val DELAY_MS : Long = 1500
     private val PERIOD_MS : Long = 1500
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -55,6 +56,10 @@ class AdminHomeFragment : Fragment() {
 
         btn_send_messages_to_user.setOnClickListener {
             startActivity(Intent(context, AdminSendMessagesActivity::class.java))
+        }
+
+        remove_food_from_menu_card.setOnClickListener {
+            startActivity(Intent(context, AdminRemoveFoodActivity::class.java))
         }
 
         mPager = view.findViewById(R.id.view_pager) as ViewPager

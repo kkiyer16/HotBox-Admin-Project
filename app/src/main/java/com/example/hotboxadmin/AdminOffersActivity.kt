@@ -24,7 +24,7 @@ class AdminOffersActivity : AppCompatActivity() {
     private lateinit var food_categories_spinner : Spinner
     private var food = arrayOfNulls<String>(5)
     private val fStore = FirebaseFirestore.getInstance()
-    private val adminid = FirebaseAuth.getInstance().currentUser?.uid.toString()
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +37,8 @@ class AdminOffersActivity : AppCompatActivity() {
         food_categories_spinner = findViewById(R.id.offer_spinner_food_category)
         food = resources.getStringArray(R.array.food_categories)
 
-        val arr_adap = ArrayAdapter(this, android.R.layout.simple_spinner_item, food)
-        arr_adap.setDropDownViewResource(android.R.layout.simple_spinner_item)
+        val arr_adap = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, food)
+        arr_adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         food_categories_spinner.adapter = arr_adap
 
         food_categories_spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -84,7 +84,9 @@ class AdminOffersActivity : AppCompatActivity() {
                 offerData["foodcategory"] = food_category
                 offerData["foodoffer"] = food_offer_price
                 progress_bar_offers.visibility = View.VISIBLE
-                val ref = fStore.collection("HotBox Admin").document(adminid).collection("FoodOffers")
+                val ref = fStore.collection("HotBoxAdmin")
+                    .document(adminID)
+                    .collection("FoodOffers")
                     .document(uuid)
                 ref.set(offerData, SetOptions.merge())
                     .addOnCompleteListener {

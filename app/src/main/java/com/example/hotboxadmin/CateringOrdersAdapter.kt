@@ -14,6 +14,7 @@ class CateringOrdersAdapter(var con: Context, var list: ArrayList<ModelCateringO
     RecyclerView.Adapter<cateringOrdersViewHolder>() {
     private var status = arrayOfNulls<String>(4)
     private val fStore = FirebaseFirestore.getInstance()
+    private val adminID = "F0y2F2SeaoWHjY7sIHFr4JRf1HF2"
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): cateringOrdersViewHolder {
         val layoutInflater: LayoutInflater = LayoutInflater.from(con)
